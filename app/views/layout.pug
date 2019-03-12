@@ -1,0 +1,28 @@
+doctype
+html(lang="zh-CN")
+  head
+    meta(charset="UTF-8")
+    title #{title}
+    meta(name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1")
+    link(rel="stylesheet" href="http://res.wx.qq.com/open/libs/weui/1.1.1/weui.min.css")
+    script(src="http://zeptojs.com/zepto-docs.min.js")
+    script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
+  body
+    block content
+      
+    script.
+      wx.config({
+        debug: false,
+        appId: 'xxxxxxxxxxxxxxxxxxx',
+        timestamp: #{timestamp},
+        nonceStr: '#{noncestr}',
+        signature: '#{signature}',
+        jsApiList: [
+          'startRecord',
+          'stopRecord',
+          'onVoiceRecordEnd',
+          'translateVoice',
+          'previewImage',
+          'onMenuShareAppMessage'
+        ]
+      })
